@@ -21,6 +21,10 @@ public class MenuItem {
 	public double getPrice() {
 		return price;
 	}
+        
+        public String getName() {
+            return name;
+        }
 	
 	public String getCategory() {
 		return category;
