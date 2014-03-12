@@ -1,5 +1,4 @@
 
-
 public class Register {
 	public double cash_total;
 	

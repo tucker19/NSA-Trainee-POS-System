@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-
 import Menu.MenuItem;
 
 /**
@@ -14,6 +13,7 @@ import Menu.MenuItem;
 public class OrderItem {
     public MenuItem item;
     public String comment;
+    int status = 0;
     
     public OrderItem(MenuItem new_item) {
                 item = new_item;		
@@ -26,5 +26,13 @@ public class OrderItem {
     }
     public String getComment(){
         return comment;
+    }
+    
+    public int getStatus(){
+        return status;
+    }
+    
+    public void setStatus(int new_status){
+        status = new_status;
     }
 }

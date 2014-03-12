@@ -1,9 +1,8 @@
-
 public class EmployeeLink {
 
 	public String employeeName;
 	public double usrNum,overAllTime,inTime,tips,manager, owner;
-    public EmployeeLink nextLink;
+        public EmployeeLink nextLink;
 
     //Link constructor
     public EmployeeLink(String name, double usrnum, double time, double managerid, double ownerid,double pTips, double in) {
@@ -14,6 +13,9 @@ public class EmployeeLink {
 	    owner = ownerid;
 	    tips = pTips;
 	    inTime = in;
+            
+            System.out.println("Owner= "+owner);
+            System.out.println("userid= "+usrnum);
     }
     
     public String getname(){
@@ -40,8 +42,10 @@ public class EmployeeLink {
     }
     
     public String isOwner(){
-    	if(owner == 1)
+    	if(owner == 1){
+            System.out.println("is owner");
     		return "Yes";
+        }
     	else
     		return "No";
     }
@@ -64,3 +68,4 @@ public class EmployeeLink {
     }
 	
 }
+

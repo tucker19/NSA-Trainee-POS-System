@@ -54,7 +54,10 @@ public class MenuItem {
 		return specialDay;
 	}
 	
-	
+	public void setName(String newName) {
+            name = newName;
+        }
+        
 	public void setPrice(double p) {
 		price = p;
 	}

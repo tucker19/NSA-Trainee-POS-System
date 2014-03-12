@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 import Menu.MenuItem;
 import java.util.Iterator;
@@ -9,6 +8,8 @@ public class Order {
 	public double total_price;
 	public String comments;
         public int splitOrder = 1;
+        public double sub_total;
+        public double gratuity = 0;
 //        public ArrayList<MenuItem> items = new ArrayList<MenuItem>();
         public ArrayList<OrderItem> items = new ArrayList<OrderItem>();
 	
@@ -19,37 +20,47 @@ public class Order {
 	}	
 	
 	public double getPrice() {
-//		double temp = 0;
-//		for(int i = 0; i < items.size(); i++) {
-//			MenuItem m = items.get(i);
-//			temp += m.getPrice();
-//		}
-            double total = 0;
+            sub_total = 0;
             Iterator<OrderItem> it = items.iterator();
             while(it.hasNext()){
                 OrderItem obj = it.next();
-                total += obj.getItem().getPrice();
+                sub_total += obj.getItem().getPrice();
             }
                 
                 
 //		total_price = temp;
 //		return total_price;
-            return total;
+            return sub_total;
 	}
+        
+        public int getTable(){
+            return table_no;
+        }
+        
+        public double totalPrice(){
+            return total_price;
+        }
     
-	public double addGratuity_Tax(double gratuity, double tax) {
-		total_price += total_price*tax;
-		total_price += gratuity;
+	public double addTax(double tax) {
+		total_price = sub_total*tax;
 		return total_price;
 	}
 	
-//    public String getComment(){
-//    	return comments;
-//    }
+        public double getGratuity(){
+            return gratuity;
+        }
         
-//    public void setComment(String newComment){
-//        comments = newComment;
-//    }
+        public void addGratuity(double value){
+            gratuity += value;
+        }
+
+        public void setSplit(int split){
+            splitOrder = split;
+        }
+        
+        public int getSplit(){
+            return splitOrder;
+        }
         
         public ArrayList getItems(){
             return items;
@@ -66,6 +77,9 @@ public class Order {
 	public void deleteOrder() {
 		items.clear();
                 total_price = 0;
+                sub_total = 0;
+                splitOrder = 1;
+                gratuity = 0;
 	}
 }
 
