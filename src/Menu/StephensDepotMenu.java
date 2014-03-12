@@ -46,14 +46,14 @@ public class StephensDepotMenu {
 		
 		//add entrees
 		
-		dinnerMenu.add(new MenuItem("Country Fried Steak", 9.50, "served with homemade cream gravy", "Entrees", 24));
-		dinnerMenu.add(new MenuItem("Chicken Strip Dinner", 8.95, "tender breast strips fried to a golden brown", "Entrees", 25));
+		dinnerMenu.add(new MenuItem("Country Fried Steak", 9.50, "served with homemade cream gravy", "Entrees", 24, "Tuesday"));
+		dinnerMenu.add(new MenuItem("Chicken Strip Dinner", 8.95, "tender breast strips fried to a golden brown", "Entrees", 25, "Thursday"));
 		dinnerMenu.add(new MenuItem("Cod Filets", 8.75, "battered and deep fried served with tartar sauce", "Entrees", 26));
-		dinnerMenu.add(new MenuItem("KC Strip Steak", 13.95, "8oz USDA Choice grilled to your liking", "Entrees", 27));
-		dinnerMenu.add(new MenuItem("Ribeye Steak", 15.95, "10oz USDA Choice grilled to your liking", "Entrees", 28));
-		dinnerMenu.add(new MenuItem("Catfish and Chips", 8.95, "catfish strips served with fries and cole slaw", "Entrees", 29));
-		dinnerMenu.add(new MenuItem("Chicken Parmesan", 8.95, "topped with marinara and cheese and served with a side of pasta and vegetable", "Entrees", 30));
-		dinnerMenu.add(new MenuItem("Meatloaf", 7.95, "served with our homemade gravy", "Entrees", 31));
+		dinnerMenu.add(new MenuItem("KC Strip Steak", 13.95, "8oz USDA Choice grilled to your liking", "Entrees", 27, "Saturday"));
+		dinnerMenu.add(new MenuItem("Ribeye Steak", 15.95, "10oz USDA Choice grilled to your liking", "Entrees", 28, "Sunday"));
+		dinnerMenu.add(new MenuItem("Catfish and Chips", 8.95, "catfish strips served with fries and cole slaw", "Entrees", 29, "Friday"));
+		dinnerMenu.add(new MenuItem("Chicken Parmesan", 8.95, "topped with marinara and cheese and served with a side of pasta and vegetable", "Entrees", 30, "Wednesday"));
+		dinnerMenu.add(new MenuItem("Meatloaf", 7.95, "served with our homemade gravy", "Entrees", 31, "Monday"));
 		dinnerMenu.add(new MenuItem("Fettucine Alfredo", 7.50, "served in our homemade sauce, no meat", "Entrees", 32));
 		dinnerMenu.add(new MenuItem("Fettucine Alfredo", 9.95, "with Chicken", "Entrees", 33));
 		dinnerMenu.add(new MenuItem("Fettucine Alfredo", 10.95, "with Shrimp", "Entrees", 34));
@@ -72,15 +72,15 @@ public class StephensDepotMenu {
 		breakfastMenu.add(new MenuItem("Half Waffle Combo", 4.50, "One half Belgian waffle with one egg and two strips of bacon", "Specialties", 44));
 		
 		//combinations 
-		breakfastMenu.add(new MenuItem("Bacon or Sausage and Eggs", 6.25, "", "Specialties", 45));
-		breakfastMenu.add(new MenuItem("Ham and Eggs", 6.95, "", "Specialties", 46));
-		breakfastMenu.add(new MenuItem("8oz KC Strip and Eggs", 12.95, "", "Specialties", 47));
+		breakfastMenu.add(new MenuItem("Bacon or Sausage and Eggs", 6.25, "", "Specialties", 45, "Monday"));
+		breakfastMenu.add(new MenuItem("Ham and Eggs", 6.95, "", "Specialties", 46, "Tuesday"));
+		breakfastMenu.add(new MenuItem("8oz KC Strip and Eggs", 12.95, "", "Specialties", 47, "Sunday"));
 		
 		//omelets
-		breakfastMenu.add(new MenuItem("Denver Omelet", 6.95, "with diced ham, green pepper and onion", "Omelets", 48));
-		breakfastMenu.add(new MenuItem("Cheese", 5.95, "with both Swiss and American", "Omelets", 49));
-		breakfastMenu.add(new MenuItem("Veggie", 6.50, "with mushroom, onion, green pepper and tomato", "Omelets", 50));
-		breakfastMenu.add(new MenuItem("Southwest Omelet", 6.95, "with sausage, green pepper, onion and mushroom", "Omelets", 51));
+		breakfastMenu.add(new MenuItem("Denver Omelet", 6.95, "with diced ham, green pepper and onion", "Omelets", 48, "Saturday"));
+		breakfastMenu.add(new MenuItem("Cheese", 5.95, "with both Swiss and American", "Omelets", 49, "Tuesday"));
+		breakfastMenu.add(new MenuItem("Veggie", 6.50, "with mushroom, onion, green pepper and tomato", "Omelets", 50, "Friday"));
+		breakfastMenu.add(new MenuItem("Southwest Omelet", 6.95, "with sausage, green pepper, onion and mushroom", "Omelets", 51, "Thursday"));
 		
 		//sides
 		breakfastMenu.add(new MenuItem("Hash Browns", 1.95, "", "Sides", 52));
