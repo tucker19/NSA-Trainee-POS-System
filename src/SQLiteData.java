@@ -75,7 +75,7 @@ public class SQLiteData {
 	         int employeeid = rs.getInt("employeeid");
 	         String  name = rs.getString("name");
 	         double time  = rs.getInt("time");
-	         el.insert(name, employeeid, time);
+	         el.insert(name, employeeid, time, time);
 	         System.out.println( "ID = " + id );
 	         System.out.println( "EMPLOYEEID = " + employeeid );
 	         System.out.println( "NAME = " + name );
