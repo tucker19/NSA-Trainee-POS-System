@@ -34,7 +34,7 @@ public class MenuItem {
 		return id;
 	}
 	
-	public String description() { 
+	public String getDescription() { 
 		return description;
 	}
 	
