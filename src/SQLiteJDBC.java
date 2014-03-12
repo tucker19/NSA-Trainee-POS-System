@@ -1,7 +1,3 @@
-
-
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -10,9 +6,9 @@ import java.sql.Statement;
 public class SQLiteJDBC {
 	
 	public int employeeId = 1;
-	public static EmployeeList el;
+	//public static EmployeeList el;
 
-	public static void main() //String args[] )
+	public static void connect() //String args[] 
 	{
 		Connection c = null;
 	    try {
@@ -25,9 +21,9 @@ public class SQLiteJDBC {
 	    System.out.println("Opened database successfully");
 	}
 
-	public static void create() //String args[] )
+	public static void create() //String args[]
 	  {
-	    Connection c = null;
+	    Connection c = null; 
 	    Statement stmt = null;
 	    
 	    try {
@@ -37,16 +33,14 @@ public class SQLiteJDBC {
 
 	      stmt = c.createStatement();
 	      String sql = "CREATE TABLE COMPANY " +
-	                   "(ID INT PRIMARY KEY     NOT NULL, " +
-	    		   " EMPLOYEEID INT	    NOT NULL, " +
+	                   "(ID INT PRIMARY KEY     NOT NULL," +
+	    		       " EMPLOYEEID		INT		NOT NULL," +
 	                   " NAME           TEXT    NOT NULL, " +
-	                   "TIME        	DOUBLE	NOT NULL, "+
-	                   "MANAGER			INT		NOT NULL, " +
-	                   "OWNER			INT		NOT NULL, " +
+	                   " TIME        	DOUBLE	NOT NULL,"+
+	                   "MANAGER			INT		NOT NULL," +
+	                   "OWNER			INT		NOT NULL," +
 	                   "TIPS			DOUBLE	NOT NULL)"; 
-              System.out.println(sql);
 	      stmt.executeUpdate(sql);
-              System.out.println("Opened jdbcbase successfully");
 	      stmt.close();
 	      c.close();
 	    } catch ( Exception e ) {
@@ -56,7 +50,7 @@ public class SQLiteJDBC {
 	    System.out.println("Table created successfully");
 	  }
 	
-	public void insert(int id, int emid, String name, double time, int manager, int owner){
+	public void sqinsert(int id, int emid, String name, double time, int manager, int owner){
 		Connection c = null;
 	    Statement stmt = null;
 	    try {
@@ -81,7 +75,7 @@ public class SQLiteJDBC {
 	    System.out.println("Records created successfully");
 	}
 	
-	public static void getjdbc(){
+	public static void getdata(EmployeeList el){
 		Connection c = null;
 	    Statement stmt = null;
 	    try {
@@ -106,7 +100,9 @@ public class SQLiteJDBC {
 	         //System.out.println( "NAME = " + name );
 	         //System.out.println( "TIME = " + time );
 	         el.getMaxEmployeeNum();
+                 
 	      }
+              el.printList();
 	      rs.close();
 	      stmt.close();
 	      c.close();

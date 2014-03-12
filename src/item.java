@@ -1,5 +1,4 @@
 
-
 public class item {
 		public int price;
 		

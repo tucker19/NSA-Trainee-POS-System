@@ -1,8 +1,15 @@
 
 public class EmployeeList {
 	
-	    private EmployeeLink first;
-	    private double listCount = 0, employeenum = 0,unum = 0,etime = 0,etips = 0;
+	    private static EmployeeLink first;
+	    private static double listCount = 0;
+		private static double employeenum = 0;
+		private static double unum = 0;
+		private static double etime = 0;
+		private static double etips = 0;
+		//private static double eman = 0;
+		//private static double eown = 0;
+	    //private String ename; 
 
 	    //EmployeeLinkList constructor
 	    public EmployeeList() {
@@ -15,7 +22,7 @@ public class EmployeeList {
 	    }
 
 	    //Inserts a new EmployeeLink at the first of the list
-	    public void insert(String name, double usrnum ,double time,double managerid,double ownerid,double pTips) {
+	    public static void insert(String name, double usrnum ,double time,double managerid,double ownerid,double pTips) {
 		    EmployeeLink EmployeeLink = new EmployeeLink(name,usrnum ,time,managerid, ownerid, pTips,0);
 		    listCount++;
 		    EmployeeLink.nextLink = first;
@@ -79,11 +86,11 @@ public class EmployeeList {
 	    	}
 	    }
 	    
-	    public void checkHours(){ //need to put this function into main file as a different list
+	    public EmployeeList checkHours(EmployeeList nl){ //need to put this function into main file as a different list
 			for(int i = 0; i<listCount; i++){
 				if(first.getTime() == (28.0 - 0.10)){
 					if(first.owner != 1){
-					insert(first.getname(), first.usrNum, first.overAllTime,first.manager, first.owner, first.tips);
+					EmployeeList.insert(first.getname(), first.usrNum, first.overAllTime,first.manager, first.owner, first.tips);
 					first = first.nextLink;
 					}
 				}
@@ -91,9 +98,10 @@ public class EmployeeList {
 					first = first.nextLink;
 				}
 			}
+			return nl;
 	    }
 	    
-	    public void addTip(double id, double tip){
+	    public static void addTip(double id, double tip){
 	    	for(int i = 0; i<listCount;i++){
 	    		if(id == first.getusrId()){
 	    			first.tips+=tip;
@@ -198,7 +206,7 @@ public class EmployeeList {
 	    	return "You are not allowed to do this.";
 	    }
 	    
-	    public String addEmployee(double id, String name, double usrnum,double pTips){ //This isnt finished
+	    public String addEmployee(double id, String name){ //This isnt finished
 	    	if(isLManager(id) == "Yes" || isLOwner(id) == "Yes"){
 	    		insert(name,employeenum++,0,0,0,0);
 	    		getMaxEmployeeNum();
@@ -214,9 +222,22 @@ public class EmployeeList {
 	    	}
 	    	return "You are not allowed to do this.";
 	    }
+	    /*
+	    public void shutdown(){
+	    	for(int i = 0; i<listCount; i++){
+	    		ename = first.getname();
+	    		unum = first.getusrId();
+		    	etime = first.getTime();
+		  		etips = first.getTips();
+		  		eman = first.getManNum();
+		  		eown = first.getOwnNum();
+		    	sqinsert(i, unum, ename, etime, eman, eown);
+		    	first = first.nextLink;
+	    	}
+	    }*/
 	    
 	    //Prints list data
-	    public void printList() {
+	    public static void printList() {
 		    EmployeeLink currentEmployeeLink = first;
 		    System.out.print("List: ");
 		    while(currentEmployeeLink != null) {
