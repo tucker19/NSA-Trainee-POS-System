@@ -7,7 +7,8 @@ public class MenuItem {
 	public String description;
 	public String category;
 	public int id;
-	
+	public double startSpecial;
+	public String specialDay;
 	
 	public MenuItem(String n, double p, String d, String c, int i) {
 		name = n;
@@ -15,6 +16,17 @@ public class MenuItem {
 		description = d;
 		category = c;
 		id = i;
+		specialDay = "";
+	}
+	
+	public MenuItem(String n, double p, String d, String c, int i, String day) {
+		name = n;
+		price = p;
+		description = d;
+		category = c;
+		id = i;
+		specialDay = "";
+		specialDay = day;
 	}
 	
 	
@@ -38,6 +50,10 @@ public class MenuItem {
 		return description;
 	}
 	
+	public String getSpecialDay() {
+		return specialDay;
+	}
+	
 	
 	public void setPrice(double p) {
 		price = p;
@@ -53,6 +69,10 @@ public class MenuItem {
 	
 	public void setId(int i) {
 		id = i;
+	}
+	
+	public void setSpecialDay(String day) {
+		specialDay = day;
 	}
 	
 	
